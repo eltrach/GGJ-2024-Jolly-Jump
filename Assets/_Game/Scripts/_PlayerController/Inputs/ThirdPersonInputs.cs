@@ -78,6 +78,7 @@ public class ThirdPersonInputs : MonoBehaviour
         _isJumping = Input.GetButtonDown("Jump");
         _isSprinting = Input.GetKey(KeyCode.LeftShift);
         _actionButton = Input.GetKeyDown(actionBtnKeyCode);
+        _shotButton = Input.GetMouseButtonDown(0);
     }
     private void HandleAimConditions()
     {
@@ -94,24 +95,25 @@ public class ThirdPersonInputs : MonoBehaviour
     }
     public void HandleShoot()
     {
-        if (_shooter.GetEquippedWeapon() != null)
-        {
-            Weapon EquippedWeapon = _shooter.GetEquippedWeapon();
-            if (EquippedWeapon.automaticWeapon)
+        if (_shooter != null)
+            if (_shooter.GetEquippedWeapon() != null)
+            {
+                Weapon EquippedWeapon = _shooter.GetEquippedWeapon();
+                if (EquippedWeapon.automaticWeapon)
+                {
+                    if (_isMobile) _shotButton = TCKInput.GetAction("fireBtn", EActionEvent.Press);
+                    else _shotButton = Input.GetMouseButton(0);
+                }
+                else
+                {
+                    if (_isMobile) _shotButton = TCKInput.GetAction("fireBtn", EActionEvent.Down);
+                    else _shotButton = Input.GetMouseButtonDown(0);
+                }
+            }
+            else // if he's not holding any weapon:
             {
                 if (_isMobile) _shotButton = TCKInput.GetAction("fireBtn", EActionEvent.Press);
                 else _shotButton = Input.GetMouseButton(0);
             }
-            else
-            {
-                if (_isMobile) _shotButton = TCKInput.GetAction("fireBtn", EActionEvent.Down);
-                else _shotButton = Input.GetMouseButtonDown(0);
-            }
-        }
-        else // if he's not holding any weapon:
-        {
-            if (_isMobile) _shotButton = TCKInput.GetAction("fireBtn", EActionEvent.Press);
-            else _shotButton = Input.GetMouseButton(0);
-        }
     }
 }
