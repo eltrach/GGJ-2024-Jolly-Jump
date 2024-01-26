@@ -2141,11 +2141,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   twoBoneIKConstraint: {fileID: 1612905095}
   availableShots: 120
-  idlePositionObj: {fileID: 0}
+  idlePositionObj: {fileID: 255858418}
   aimingPositionObj: {fileID: 916182047}
   shotPositionObj: {fileID: 1291033388}
   shotTimeOut: 0
-  aimToShotDuration: 0.5
+  aimToShotDuration: 3
+  lerpSpeed: 10
 --- !u!1 &1409386303
 GameObject:
   m_ObjectHideFlags: 0

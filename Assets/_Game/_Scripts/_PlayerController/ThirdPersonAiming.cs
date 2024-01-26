@@ -15,6 +15,7 @@ public class ThirdPersonAiming : MonoBehaviour
 
     public float shotTimeOut;
     public float aimToShotDuration = 0.3f;
+    public float lerpSpeed = 5f;
 
     bool _isAiming;
     bool _canShot;
@@ -32,22 +33,31 @@ public class ThirdPersonAiming : MonoBehaviour
         _isShot = _input.Shot;
         if (_isAiming)
         {
-            //twoBoneIKConstraint.DO
+            ChangeHandWeight(1);
             print(" --> AIMING");
             _canShot = true;
             if (!_isShot)
-                twoBoneIKConstraint.data.target.transform.DOLocalMove(aimingPositionObj.position, aimToShotDuration);
+                twoBoneIKConstraint.data.target.transform.DOLocalMove(aimingPositionObj.localPosition, aimToShotDuration);
 
             if (_isShot && availableShots > 0)
             {
                 print("---> SHOOT");
                 availableShots--;
-                twoBoneIKConstraint.data.target.transform.DOLocalMove(shotPositionObj.position, aimToShotDuration);
+                //twoBoneIKConstraint.data.S
+                twoBoneIKConstraint.data.target.transform.DOLocalMove(shotPositionObj.localPosition, aimToShotDuration);
             }
+        }
+        else
+        {
+            ChangeHandWeight(0);
         }
     }
     public void IncreaseShots(int inceaseBy)
     {
         availableShots += inceaseBy;
+    }
+    public void ChangeHandWeight(float targetWeight)
+    {
+        twoBoneIKConstraint.weight = Mathf.Lerp(twoBoneIKConstraint.weight, targetWeight, lerpSpeed * Time.deltaTime);
     }
 }
