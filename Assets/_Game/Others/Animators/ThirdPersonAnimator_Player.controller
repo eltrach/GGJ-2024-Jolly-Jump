@@ -9,7 +9,7 @@ BlendTree:
   m_Name: Idles
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400002, guid: a3422ad278cd9a94aa3da8e6bff9deea, type: 3}
+    m_Motion: {fileID: 7400004, guid: 3029f6b18be5ca643be71f0d81030d25, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -1119,9 +1119,9 @@ AnimatorStateMachine:
   - {fileID: 4047434398791127675}
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: -2940492075335331439}
-    second: []
   - first: {fileID: -8485852545547331880}
+    second: []
+  - first: {fileID: -2940492075335331439}
     second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 160, z: 0}
@@ -1741,7 +1741,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1695192892109923712, guid: b3f3ac3565beb18429901d070f0eec02,
+    m_Motion: {fileID: 1695192892109923712, guid: 99c47ba5b2fa20d499c2a381a63e446d,
       type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
@@ -1750,7 +1750,7 @@ BlendTree:
     m_DirectBlendParameter: Speed
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 83ed209ea436efc4aba715fe2858546f, type: 3}
+    m_Motion: {fileID: 7400000, guid: 6ca52f8e5eb442943b0d6c97c5e5506f, type: 3}
     m_Threshold: 4
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
