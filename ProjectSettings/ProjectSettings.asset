@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: JMALATRACH
   productName: GGJ_2024 Project
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -160,7 +160,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.UnityTechnologies.com.unity.template.urpblank
-    Standalone: com.Unity-Technologies.com.unity.template.urp-blank
+    Standalone: com.JMALATRACH.GGJ-2024-Project
     iPhone: com.Unity-Technologies.com.unity.template.urp-blank
   buildNumber:
     Standalone: 0
@@ -183,7 +183,7 @@ PlayerSettings:
   keepLoadedShadersAlive: 0
   StripUnusedMeshComponents: 0
   strictShaderVariantMatching: 0
-  VertexChannelCompressionMask: 4054
+  VertexChannelCompressionMask: -1
   iPhoneSdkVersion: 988
   iOSTargetOSVersionString: 12.0
   tvOSSdkVersion: 0
@@ -827,7 +827,7 @@ PlayerSettings:
     tvOS: 1
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
-  allowUnsafeCode: 0
+  allowUnsafeCode: 1
   useDeterministicCompilation: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1
