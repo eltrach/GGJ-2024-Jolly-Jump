@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7667494669667366455}
   - component: {fileID: 5696395858821836850}
   - component: {fileID: 8654666718104142972}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrouneTileCORNER (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4151856679539302013}
   - component: {fileID: 165536959119462598}
   - component: {fileID: 8542105504776534312}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pipeStraight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6691511065142394078}
   - component: {fileID: 2893027940893711174}
   - component: {fileID: 2483981176698952101}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrouneTileCORNER (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 8505075899413516261}
   - component: {fileID: 1606910513480428941}
   - component: {fileID: 1414706295375414807}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pipeEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 4529902393658628272}
   - component: {fileID: 1680829273063658085}
   - component: {fileID: 5805259065962843558}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pipeEnd (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 5933752851460708640}
   - component: {fileID: 4483698669703235225}
   - component: {fileID: 2460771323525146822}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pipes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   - component: {fileID: 7186419953107607966}
   - component: {fileID: 2889852249511924721}
   - component: {fileID: 7553036495438857465}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrouneTileCORNER (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 1875040312249883044}
   - component: {fileID: 971230070904543615}
   - component: {fileID: 4187291574510550366}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pipecurve
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 28349346011675896}
   - component: {fileID: 7666357717811257972}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: platformSquare 3X3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 8535665039742110900}
   - component: {fileID: 8059796128878914356}
   - component: {fileID: 3994952525563969361}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pipeStraight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 5484221354663716740}
   - component: {fileID: 3139678359809295987}
   - component: {fileID: 8291450014651504570}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: GrouneTileCORNER
   m_TagString: Untagged
   m_Icon: {fileID: 0}

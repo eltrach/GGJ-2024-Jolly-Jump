@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - _smilyGameObjGenerator: {fileID: 2665152480440325053, guid: 25f056563aa7328438c9de83a2851cca,
+  - _smilyGameObjGenerator: {fileID: 4678937929845189531, guid: 25f056563aa7328438c9de83a2851cca,
       type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
