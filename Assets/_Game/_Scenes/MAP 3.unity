@@ -2543,6 +2543,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Head
       objectReference: {fileID: 0}
+    - target: {fileID: 3852198778478085961, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_CullingType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852198778478085961, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_PlayAutomatically
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5145552019001789226, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6128654707312489374, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_AABB.m_Extent.x
