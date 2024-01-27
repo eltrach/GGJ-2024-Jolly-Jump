@@ -2286,7 +2286,7 @@ MonoBehaviour:
   throwable: {fileID: 1555072608699021617, guid: 4ccfdb790ab60594e8d9507f818e75ed,
     type: 3}
   releasePosition: {fileID: 1200366043127379313}
-  availableShots: 3
+  availableShots: 30
   throwStrenght: 30
   lineRenderer: {fileID: 46766032050835482}
   linePoints: 200
