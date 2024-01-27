@@ -21,6 +21,8 @@ public class BigHead : MonoBehaviour
             _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
 
         _hp = _maxHp;
+
+        GetComponentInChildren<Animation>().Play();
     }
 
     private void Update()
