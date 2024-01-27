@@ -1941,7 +1941,6 @@ MonoBehaviour:
   _smilyGameObjGenerator: {fileID: 2665152480440325053, guid: 25f056563aa7328438c9de83a2851cca,
     type: 3}
   _smilySpawnTimer: 3
-  _smilySpawnTimer: 0.6
   _yOffset: 0.6
 --- !u!1 &882021399
 GameObject:
