@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collideParticlePrefab: {fileID: 6424128469310850354, guid: 1c77318878d4dc44fb56a6b860c28438,
     type: 3}
-  damage: 10
+  damage: 30
 --- !u!54 &1555072608699021617
 Rigidbody:
   m_ObjectHideFlags: 0
