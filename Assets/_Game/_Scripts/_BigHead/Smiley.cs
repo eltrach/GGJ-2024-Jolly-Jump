@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Smiley : MonoBehaviour
@@ -57,11 +58,15 @@ public class Smiley : MonoBehaviour
     {
         if (canCollect)
         {
-            _rootObj.SetActive(false);
-            _fxHideObj.SetActive(true);
             _canCollect = false;
 
-            Destroy(gameObject, 1.22f);
+            _rootObj.transform.DOScale(0, 0.32f).OnComplete(() =>
+            {
+                _rootObj.SetActive(false);
+                _fxHideObj.SetActive(true);
+
+                Destroy(gameObject, 1.22f);
+            });
         }
     }
 }
