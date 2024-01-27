@@ -1481,7 +1481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5024327110036533296
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2262,7 +2262,7 @@ MonoBehaviour:
   groundedRadius: 0.64
   groundLayers:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 567
   cinemachineCameraTarget: {fileID: 6623740490947685502}
   topClamp: 70
   bottomClamp: -50
@@ -2286,15 +2286,14 @@ MonoBehaviour:
   throwable: {fileID: 1555072608699021617, guid: 4ccfdb790ab60594e8d9507f818e75ed,
     type: 3}
   releasePosition: {fileID: 1200366043127379313}
-  availableShots: 0
+  availableShots: 3
   throwStrenght: 30
   lineRenderer: {fileID: 46766032050835482}
-  linePoints: 50
+  linePoints: 200
   timeBetweenPoints: 0.05
-  velocityOffset: 1
   throwableCollisionMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   aimToShotDuration: 0.5
   lerpSpeed: 10
   mainCamera: {fileID: 0}
@@ -2964,6 +2963,7 @@ GameObject:
   - component: {fileID: 607079061573840959}
   - component: {fileID: 3597059957511869}
   - component: {fileID: 2863125989466029930}
+  - component: {fileID: 3200146527726925965}
   m_Layer: 8
   m_Name: TPPCamera
   m_TagString: Untagged
@@ -3005,7 +3005,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 9090511999619898166}
   m_Follow: {fileID: 9090511999619898166}
   m_Lens:
     FieldOfView: 50
@@ -3041,6 +3041,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_ApplyAfter: 1
   m_PreserveComposition: 0
+--- !u!114 &3200146527726925965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7762384607653563513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e501d18bb52cf8c40b1853ca4904654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CollideAgainst:
+    serializedVersion: 2
+    m_Bits: 561
+  m_IgnoreTag: Player
+  m_TransparentLayers:
+    serializedVersion: 2
+    m_Bits: 50
+  m_MinimumDistanceFromTarget: 1
+  m_AvoidObstacles: 1
+  m_DistanceLimit: 0
+  m_MinimumOcclusionTime: 0.1
+  m_CameraRadius: 0.1
+  m_Strategy: 1
+  m_MaximumEffort: 4
+  m_SmoothingTime: 0
+  m_Damping: 0
+  m_DampingWhenOccluded: 0
+  m_OptimalTargetDistance: 0
 --- !u!1 &7788854377291683818
 GameObject:
   m_ObjectHideFlags: 0

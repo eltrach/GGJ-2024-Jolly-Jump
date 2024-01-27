@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4416916387141745380}
   - component: {fileID: 3813783345812966775}
   - component: {fileID: 2383001029226238957}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock formation C sand 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

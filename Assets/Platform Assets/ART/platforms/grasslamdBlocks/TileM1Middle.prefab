@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5066059377385575888}
   - component: {fileID: 8804475664002620003}
   - component: {fileID: 8012367003396882926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TileM1Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

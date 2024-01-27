@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2367027521713753611}
   - component: {fileID: 6371557197182097240}
   - component: {fileID: 1519373258755739268}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock formation C Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

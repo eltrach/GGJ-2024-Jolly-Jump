@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19590235, g: 0.2372657, b: 0.31094998, a: 1}
+  m_IndirectSpecularColor: {r: 0.19591501, g: 0.23728395, b: 0.31093928, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2427,6 +2427,16 @@ PrefabInstance:
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692993959107662887, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692993959107662887, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3532521518890838521, guid: 5eb5125b9e45dd34bb44151be4e58828,
@@ -5198,18 +5208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a309d89bc05ba124abcc832a57184440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitBoxes: []
-  _health: {fileID: 0}
-  thirdPersonMelee: {fileID: 0}
-  canApplyDamage: 0
-  onEnableDamage:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
-  onDisableDamage:
-    m_PersistentCalls:
-      m_Calls: []
-    m_CallsDirty: 1
 --- !u!4 &2135210241
 Transform:
   m_ObjectHideFlags: 0

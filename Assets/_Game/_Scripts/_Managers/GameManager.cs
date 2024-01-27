@@ -25,7 +25,7 @@ public class GameManager : Singleton<GameManager>
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Pause();
         }

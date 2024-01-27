@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6371713007437827025}
   - component: {fileID: 5034710299753236680}
   - component: {fileID: 5751726625700985969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock formation A dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

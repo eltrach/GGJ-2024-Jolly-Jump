@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4108156970974877147}
   - component: {fileID: 5551855027450270774}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 8530170175958556522}
   - component: {fileID: 697379124365331284}
   - component: {fileID: 921786629293606712}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: elevatedTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
