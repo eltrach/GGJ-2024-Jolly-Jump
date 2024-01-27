@@ -27,6 +27,6 @@ public class Smiley : MonoBehaviour
     void Collect()
     {
         PlayerRoot.ThirdPersonAiming.IncreaseShots(value);
-
+        Destroy(gameObject);
     }
 }
