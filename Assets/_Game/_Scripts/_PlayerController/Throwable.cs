@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
-    public ParticleSystem CollideParticle;
+    public ParticleSystem collideParticlePrefab;
     public float damage;
 
 
@@ -13,6 +13,9 @@ public class Throwable : MonoBehaviour
         {
             BigHead bigHead = collision.transform.GetComponentInParent<BigHead>();
             bigHead.Hit(damage);
+
+            if (collideParticlePrefab != null)
+                Instantiate(collideParticlePrefab, collision.contacts[0].point, Quaternion.identity);
         }
 
     }
