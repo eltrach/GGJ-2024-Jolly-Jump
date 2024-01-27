@@ -16,6 +16,7 @@ public class BigHead : MonoBehaviour
             _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
 
         _hp = _maxHp;
+        _hpSlider.value = 1;
     }
 
     public void Hit(float damage)
@@ -25,7 +26,7 @@ public class BigHead : MonoBehaviour
         _skinnedMeshRenderer.SetBlendShapeWeight(0, 100 - p * 100);
         _hpSlider.DOValue(p, 0.3f);
 
-        if (_hp >= 0)
+        if (_hp <= 0)
         {
             GlobalRoot.LevelManager.LoadNextLevel();
         }
