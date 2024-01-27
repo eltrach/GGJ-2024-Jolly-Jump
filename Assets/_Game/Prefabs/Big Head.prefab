@@ -736,6 +736,20 @@ MonoBehaviour:
   _eyes1: {fileID: 2019352316513632166}
   _eyes2: {fileID: 5755254681943190398}
   _target: {fileID: 0}
+  _flagRendeer: {fileID: 7754337316189510777}
+  _flagTextures:
+  - {fileID: 2800000, guid: 67220c1fdf43c8941ba66650c48f70f7, type: 3}
+  - {fileID: 2800000, guid: b6541610b983a20469ebd3dfc947d290, type: 3}
+  - {fileID: 2800000, guid: bde7547807c8dd740a91058298d387dd, type: 3}
+  - {fileID: 2800000, guid: cbce2d6dd25b521449b6331980cb13d1, type: 3}
+  - {fileID: 2800000, guid: 96bfc61fb415cc043b1bbc5e42b461a7, type: 3}
+  - {fileID: 2800000, guid: 00234c1ab58b4ff45bcf74de2c623282, type: 3}
+  - {fileID: 2800000, guid: 0198830ee340c7f4a9b069c6cb4e839d, type: 3}
+  - {fileID: 2800000, guid: dfb90d948c9afa94ba1559fa10ec5186, type: 3}
+  - {fileID: 2800000, guid: 296262706203e934eb935a682a1ef072, type: 3}
+  - {fileID: 2800000, guid: 3c40e4be18e31e64fb31c955fbed6761, type: 3}
+  - {fileID: 2800000, guid: a57e16d317c2dd24db0cdee2337e85a0, type: 3}
+  - {fileID: 2800000, guid: 87e491c9bd02ee844b475c38dc014273, type: 3}
 --- !u!1 &4906740703875919188
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,6 +2414,12 @@ Animation:
 --- !u!4 &4119711149629317034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7f11e961e0d52c747a3b30ef1801ab99,
+    type: 3}
+  m_PrefabInstance: {fileID: 4514469450264770625}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &7754337316189510777 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3082029225471220680, guid: 7f11e961e0d52c747a3b30ef1801ab99,
     type: 3}
   m_PrefabInstance: {fileID: 4514469450264770625}
   m_PrefabAsset: {fileID: 0}

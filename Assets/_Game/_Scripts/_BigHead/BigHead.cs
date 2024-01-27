@@ -12,9 +12,10 @@ public class BigHead : MonoBehaviour
     [Space]
     [SerializeField] Transform _head;
     [SerializeField] Transform _eyes1, _eyes2;
-
     [SerializeField] Transform _target;
-
+    [Space]
+    [SerializeField] Renderer _flagRendeer;
+    [SerializeField] Texture[] _flagTextures;
     private void Start()
     {
         if (!_skinnedMeshRenderer)
@@ -23,6 +24,8 @@ public class BigHead : MonoBehaviour
         _hp = _maxHp;
         GetComponentInChildren<Animation>().Play();
         _hpSlider.value = 1;
+
+        _flagRendeer.material.mainTexture = _flagTextures[Random.Range(0, _flagTextures.Length)];
     }
 
     private void Update()
