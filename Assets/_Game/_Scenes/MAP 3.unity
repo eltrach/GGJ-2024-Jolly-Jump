@@ -2543,6 +2543,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1583206058}
     m_Modifications:
+    - target: {fileID: 660065906415227057, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -2606,6 +2611,21 @@ PrefabInstance:
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 997137541476722947, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692993959107662887, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692993959107662887, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3532521518890838521, guid: 5eb5125b9e45dd34bb44151be4e58828,
@@ -2837,7 +2857,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _smilyGameObjGenerator: {fileID: 2665152480440325053, guid: 25f056563aa7328438c9de83a2851cca,
     type: 3}
-  _smilySpawnTimer: 0.6
+  _smilySpawnTimer: 5
+  _yOffset: 0.6
 --- !u!1001 &840875439
 PrefabInstance:
   m_ObjectHideFlags: 0
