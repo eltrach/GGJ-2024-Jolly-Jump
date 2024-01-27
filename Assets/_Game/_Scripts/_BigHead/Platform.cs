@@ -8,48 +8,36 @@ public class Platform : MonoBehaviour
     public float distance = 1.5f;
     [Range(0.3f, 15f)]
     public float speed = 1.3f;
-
+    
     Vector3 _startPosition;
-    Transform _target;
+    [SerializeField] CharacterController _target;
     
 
     private void Awake()
     {
         _startPosition = transform.position;
+        tag = "Platform";
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         Vector3 newPosition = _startPosition + axe * (Mathf.Cos(Time.time * speed / distance) * distance);
         if (_target)
         {
             Vector3 oldP = transform.position;
-            _target.position += (newPosition - oldP);
+            _target.Move(newPosition - oldP);
         }
         transform.position = newPosition;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTargetEnter(CharacterController target)
     {
-        print(collision.gameObject);
-
+        _target = target;
     }
 
-    private void OnCollisionExit(Collision collision)
+    public void OnTargetExit(CharacterController target)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _target = null;
-        }
-    }
-
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        print("player");
-        if (hit.gameObject.CompareTag("Player"))
-        {
-            _target = PlayerRoot.ThirdPersonController.transform;
-        }
+        _target = null;
     }
 
     private void OnDrawGizmosSelected()
