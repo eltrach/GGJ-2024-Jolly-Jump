@@ -15,8 +15,6 @@ public class GlobalRoot : MonoBehaviour
     [SerializeField] private ShopManager shopManager;
     [SerializeField] private vDataManager dataManager;
 
-
-    // gets
     public static GameManager GameManager { get => _instance.gameManager; }
     public static UIManager UIManager { get => _instance.uIManager; }
     public static ThirdPersonUI PlayerUI => _instance.playerUI;
@@ -38,9 +36,7 @@ public class GlobalRoot : MonoBehaviour
         {
             Destroy(gameObject);
             return;
-
         }
-        //DontDestroyOnLoad(this);
     }
 
     private void Start()
@@ -50,36 +46,15 @@ public class GlobalRoot : MonoBehaviour
     private void Init()
     {
         Debug.Log("<color=cyan><b> GAME START </b></color>");
-        //
-        IsWon = false;
-        IsLost = false;
-        //
-        if (isLevelingGame)
-        {
-            levelManager.Init(out Level GeneratedLevel);
-            gameManager.Init(GeneratedLevel);
-        }
-        else
-        {
-            gameManager.Init();
-        }
-        ShopManager.Init();
-        uIManager.Init();
-
-        //UpdateSubReward();
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !GameStarted)
-        {
-            GameStarted = true;
-            GameStart();
-        }
+
     }
 
     private void GameStart()
     {
-        uIManager.GameStart();
+
     }
     [Button]
     public static void GameWin()
@@ -87,8 +62,8 @@ public class GlobalRoot : MonoBehaviour
         if (IsWon || IsLost) return;
         Debug.Log("<color=cyan><b> GAME WIN </b></color>");
         IsWon = true;
-        UIManager.GameWin();
-        //UpdateSubReward();
+
+
     }
 
     public static void GameLose()
@@ -96,22 +71,19 @@ public class GlobalRoot : MonoBehaviour
         if (IsLost) return;
         Debug.Log("<color=cyan><b> GAME LOSE </b></color>");
         IsLost = true;
-        UIManager.GameLose();
     }
     // Level Manager
     public static void NextLevel()
     {
         Debug.Log("<color=cyan><b> NEXT LEVEL </b></color>");
         Reset();
-        LevelManager.Instance.NextLevel();
-        GameManager.NextLevel();
+
     }
     public static void ReloadLevel()
     {
         Debug.Log("<color=cyan><b> RELOAD LEVEL </b></color>");
         Reset();
-        LevelManager.ReloadLevel();
-        GameManager.ReloadLevel();
+
     }
     private static void Reset()
     {

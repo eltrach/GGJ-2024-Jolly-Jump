@@ -13,10 +13,7 @@ namespace VTemplate.UI
 
         private void Start()
         {
-            if (getComponentOnStart)
-            {
-                textGUIComponent = GetComponent<TextMeshProUGUI>();
-            }
+            if (getComponentOnStart) textGUIComponent = GetComponent<TextMeshProUGUI>();
         }
         public void SetText(string text)
         {

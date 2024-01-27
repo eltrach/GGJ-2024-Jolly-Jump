@@ -113,7 +113,6 @@ namespace VTemplate.UI
         }
         private void NextLevel()
         {
-            UIManager.Instance.transitionScreenWindow.Open();
             Close();
         }
         public void SubRewardSliderUpdate(float newValue)

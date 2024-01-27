@@ -148,6 +148,7 @@ public class ThirdPersonAiming : MonoBehaviour
         _animator.SetTrigger(shotLayerAnimator);
         ReleaseThrowable();
         availableShots--;
+        GlobalRoot.UIManager.UpdateLaughterEmoji(availableShots);
         yield return new WaitForSeconds(aimToShotDuration);
         _animator.ResetTrigger(shotLayerAnimator);
         ChangeAimWeight(0f);
@@ -164,6 +165,7 @@ public class ThirdPersonAiming : MonoBehaviour
     public void IncreaseShots(int increaseBy)
     {
         availableShots += increaseBy;
+        GlobalRoot.UIManager.UpdateLaughterEmoji(availableShots);
     }
 
     public void ChangeAimWeight(float targetWeight)

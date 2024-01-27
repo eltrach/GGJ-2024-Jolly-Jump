@@ -21,7 +21,7 @@ public class GameManager : Singleton<GameManager>
     public void Init(Level generatedLevel = null)
     {
         CurrentLevel = generatedLevel;
-        if(spawnPlayerOnStart) spawnedPlayer = Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation, playerSpawnPoint);
+        if (spawnPlayerOnStart) spawnedPlayer = Instantiate(playerPrefab, playerSpawnPoint.position, playerSpawnPoint.rotation, playerSpawnPoint);
     }
     void Update()
     {
