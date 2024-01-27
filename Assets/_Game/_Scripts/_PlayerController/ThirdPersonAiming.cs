@@ -48,12 +48,16 @@ public class ThirdPersonAiming : MonoBehaviour
 
     private void Start()
     {
+        Init();
+
+    }
+    private void Init()
+    {
         _input = GetComponent<ThirdPersonInputs>();
         _animator = GetComponent<Animator>();
         aimLayerAnimator = _animator.GetLayerIndex("AimingLayer");
         shotLayerAnimator = Animator.StringToHash("Attack");
         mainCamera = Camera.main;
-
 
         int throwableLayer = throwable.gameObject.layer;
         for (int i = 0; i < 32; i++)
@@ -63,7 +67,10 @@ public class ThirdPersonAiming : MonoBehaviour
                 throwableCollisionMask |= 1 << i; // magic
             }
         }
+        GlobalRoot.UIManager.UpdateLaughterEmoji(availableShots);
+
     }
+
     private void SwitchCamera()
     {
         if (_isAiming)

@@ -6,12 +6,11 @@ using UnityEngine;
 public class GlobalRoot : MonoBehaviour
 {
     private static GlobalRoot _instance;
-    public bool isLevelingGame;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private UIManager uIManager;
     [SerializeField] private ThirdPersonUI playerUI;
-    [SerializeField, ShowIf(nameof(isLevelingGame))] private LevelManager levelManager;
+    [SerializeField] private LevelManager levelManager;
     [SerializeField] private ShopManager shopManager;
     [SerializeField] private vDataManager dataManager;
 

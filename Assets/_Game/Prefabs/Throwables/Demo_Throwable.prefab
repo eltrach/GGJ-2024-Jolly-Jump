@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6930056982966859717}
   - component: {fileID: 6659492332116332419}
   - component: {fileID: 1555072608699021617}
+  - component: {fileID: 6262280391814481455}
   m_Layer: 6
   m_Name: Demo_Throwable
   m_TagString: Untagged
@@ -46,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a864a865e67536246b90d039c083d5e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 10
 --- !u!54 &1555072608699021617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73,6 +75,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &6262280391814481455
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952214931899884660}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.087751344
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2018504085083012319
 GameObject:
   m_ObjectHideFlags: 0
@@ -84,7 +107,6 @@ GameObject:
   - component: {fileID: 6901431851483907224}
   - component: {fileID: 1734889672548662766}
   - component: {fileID: 5301701229791352707}
-  - component: {fileID: 5685708777914128637}
   m_Layer: 6
   m_Name: Throwable Model
   m_TagString: Untagged
@@ -157,24 +179,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &5685708777914128637
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018504085083012319}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

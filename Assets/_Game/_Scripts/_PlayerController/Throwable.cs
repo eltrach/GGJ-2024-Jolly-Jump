@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Throwable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ParticleSystem CollideParticle;
+    public float damage;
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        if (collision.transform.CompareTag("BigHead"))
+        {
+            BigHead bigHead = collision.transform.GetComponentInParent<BigHead>();
+            bigHead.Hit(damage);
+        }
+
     }
 }
