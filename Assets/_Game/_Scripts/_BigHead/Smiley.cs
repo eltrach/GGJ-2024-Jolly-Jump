@@ -47,6 +47,8 @@ public class Smiley : MonoBehaviour
             _rootObj.SetActive(false);
             _fxCollectObj.SetActive(true);
 
+            Destroy(gameObject, 1.22f);
+
             _canCollect = false;
         }
     }
