@@ -8,8 +8,6 @@ namespace VTemplate.Controller
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
         [SerializeField] private float moveSpeed = 2.0f;
-        private float runSpeed;
-
         [Tooltip("Sprint speed of the character in m/s")]
         [SerializeField] private float sprintSpeed = 5.335f;
 
@@ -103,7 +101,7 @@ namespace VTemplate.Controller
         private bool _hasAnimator;
 
         public float TargetSpeed { get => targetSpeed; set => targetSpeed = value; }
-        public float walkSpeed { get => moveSpeed; set => moveSpeed = value; }
+        public float runSpeed { get => moveSpeed; set => moveSpeed = value; }
 
         private void Awake()
         {
@@ -121,19 +119,17 @@ namespace VTemplate.Controller
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<ThirdPersonInputs>();
             AssignAnimationIDs();
-            canMove = true;
             // reset our timeouts on start
             _jumpTimeoutDelta = jumpTimeout;
             _fallTimeoutDelta = fallTimeout;
         }
         private void Update()
         {
-            if (canMove)
-            {
-                JumpAndGravity();
-                GroundedCheck();
-                Move();
-            }
+
+            JumpAndGravity();
+            GroundedCheck();
+            Move();
+
         }
         private void LateUpdate()
         {
@@ -143,8 +139,8 @@ namespace VTemplate.Controller
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
             bool sprint = _input.Move.magnitude > 0.7f;
-            targetSpeed = sprint ? sprintSpeed : walkSpeed; //
-            //targetSpeed = _input.Sprint ? sprintSpeed : walkSpeed;
+            //targetSpeed = sprint ? sprintSpeed : walkSpeed;
+            targetSpeed = _input.Sprint ? sprintSpeed : runSpeed;
 
             // note: Vector2's == operator uses approximation so is not floating point error prone, and is cheaper than magnitude
             // if there is no input, set the target speed to 0
@@ -195,8 +191,7 @@ namespace VTemplate.Controller
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
             // move the player
-            _controller.Move((targetDirection.normalized * (_speed * Time.deltaTime)) +
-                             (new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime));
+            _controller.Move((targetDirection.normalized * (_speed * Time.deltaTime)) + (new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime));
 
             // update animator if using character
             if (_hasAnimator)
@@ -332,10 +327,8 @@ namespace VTemplate.Controller
 
         public void Die()
         {
-
             _animator.GetLayerIndex("Base Layer");
             _animator.SetBool(_animIDIsDead, true);
-            canMove = false;
         }
 
         private void OnDrawGizmosSelected()
