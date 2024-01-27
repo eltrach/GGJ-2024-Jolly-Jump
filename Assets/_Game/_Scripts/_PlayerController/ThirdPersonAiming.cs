@@ -25,7 +25,6 @@ public class ThirdPersonAiming : MonoBehaviour
 
     public int linePoints = 50;
     public float timeBetweenPoints = 0.1f;
-    public float velocityOffset;
     public LayerMask throwableCollisionMask;
 
 
@@ -126,12 +125,13 @@ public class ThirdPersonAiming : MonoBehaviour
         Vector3 startPosition = releasePosition.position;
         Vector3 startVelocity = throwStrenght * mainCamera.transform.forward / throwable.mass;
         lineRenderer.SetPosition(0, startPosition);
+
         int i = 0;
-        for (float time = 0; time < linePoints - 1; time += timeBetweenPoints)
+        for (float time = 0; time < linePoints; time += timeBetweenPoints)
         {
             Vector3 point = startPosition + time * startVelocity;
             if (i != 0)
-                point.y = startPosition.y + startVelocity.y * velocityOffset * time + (Physics.gravity.y / 2f * time * time);
+                point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
             lineRenderer.SetPosition(i, point);
             i++;
 
@@ -140,11 +140,14 @@ public class ThirdPersonAiming : MonoBehaviour
                  (point - lastPosition).magnitude,
                  throwableCollisionMask))
             {
+                print("reached;");
                 lineRenderer.SetPosition(i, hit.point);
                 lineRenderer.positionCount = i + 1;
                 return;
             }
         }
+        lineRenderer.SetPosition(lineRenderer.positionCount - 1, Vector3.zero);
+
     }
     private void ReleaseThrowable()
     {

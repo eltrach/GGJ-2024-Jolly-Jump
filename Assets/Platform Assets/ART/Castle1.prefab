@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4755560887221263044}
   - component: {fileID: 1535376431129337052}
   - component: {fileID: 942390695813506692}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Castle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4827273374776668674}
   - component: {fileID: 226826713839483315}
   - component: {fileID: -780493414481547459}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock D dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

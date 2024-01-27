@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1149816067254353791}
   - component: {fileID: 8460016985857696353}
   - component: {fileID: -5203117538140737368}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rock formation B dark
   m_TagString: Untagged
   m_Icon: {fileID: 0}

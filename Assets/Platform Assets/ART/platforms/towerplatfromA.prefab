@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2873985480662505473}
   - component: {fileID: 2924699538343570826}
   - component: {fileID: 1160506158337438841}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: towerplatfromA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
