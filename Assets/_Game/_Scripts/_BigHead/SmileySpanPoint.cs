@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SmileySpanPoint : MonoBehaviour
 {
-    [System.NonSerialized] internal GameObject smileyObj;
+    [System.NonSerialized] internal Smiley smileyObj;
 
-    public bool IsFree => !smileyObj;
+    public bool IsFree => !smileyObj || !smileyObj.canCollect;
 
     private void Awake()
     {

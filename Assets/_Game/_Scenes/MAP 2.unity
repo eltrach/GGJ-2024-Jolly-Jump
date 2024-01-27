@@ -2518,9 +2518,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd84a8dac17ef64fb13c2af6b44914c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _smilyGameObjGenerator: {fileID: 2665152480440325053, guid: 25f056563aa7328438c9de83a2851cca,
+  _smilyGameObjGenerator: {fileID: 4678937929845189531, guid: 25f056563aa7328438c9de83a2851cca,
     type: 3}
-  _smilySpawnTimer: 0.6
+  _smilySpawnTimer: 6
   _yOffset: 0.6
 --- !u!1001 &899717999
 PrefabInstance:

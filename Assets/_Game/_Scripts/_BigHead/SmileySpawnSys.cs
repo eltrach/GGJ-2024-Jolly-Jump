@@ -3,17 +3,15 @@ using UnityEngine;
 
 public class SmileySpawnSys : MonoBehaviour
 {
-    [SerializeField] GameObject _smilyGameObjGenerator;
+    [SerializeField] Smiley _smilyGameObjGenerator;
     [SerializeField] float _smilySpawnTimer = 0.6f;
     [SerializeField] float _yOffset = 0.6f;
-
-
 
     SmileySpanPoint[] _spawnPosition;
 
     float _spawnTime;
 
-    List<GameObject> _spawnedObjects = new();
+    List<Smiley> _spawnedObjects = new();
 
     private void Start()
     {
@@ -33,16 +31,16 @@ public class SmileySpawnSys : MonoBehaviour
                 Vector3 spawnPosition = targetP.position;
                 spawnPosition.y += _yOffset;
 
-                GameObject obj = Instantiate(_smilyGameObjGenerator, spawnPosition, transform.rotation, transform);
+                Smiley obj = Instantiate(_smilyGameObjGenerator, spawnPosition, transform.rotation, transform);
                 _spawnedObjects.Add(obj);
 
                 smileySpan.smileyObj = obj;
 
                 if (_spawnedObjects.Count > 5)
                 {
-                    GameObject toDestroy = _spawnedObjects[0];
-                    if (toDestroy)
-                        Destroy(toDestroy);
+                    var toDestroy = _spawnedObjects[0];
+                    if (toDestroy && toDestroy.canCollect)
+                        toDestroy.Hide();
                     _spawnedObjects.RemoveAt(0);
                 }
             }
