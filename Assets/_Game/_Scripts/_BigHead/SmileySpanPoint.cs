@@ -6,7 +6,7 @@ public class SmileySpanPoint : MonoBehaviour
 {
     [System.NonSerialized] internal GameObject smileyObj;
 
-    public bool IsFree => smileyObj;
+    public bool IsFree => !smileyObj;
 
     private void Awake()
     {
