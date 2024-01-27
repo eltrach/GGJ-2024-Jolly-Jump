@@ -1,3 +1,5 @@
+using DG.Tweening;
+using UnityEngine;
 using VTemplate.UI;
 
 public class UIManager : Singleton<UIManager>
@@ -5,17 +7,27 @@ public class UIManager : Singleton<UIManager>
 
     public DisplayTextUI laughterEmojiText;
 
-
-    private void Start()
-    {
-
-    }
-    private void Update()
-    {
-
-    }
+    public GameObject collectMoreEmojis;
+    public float collectMoreTimer = 2f;
     public void UpdateLaughterEmoji(int amount)
     {
         laughterEmojiText.SetText(amount.ToString());
     }
+    public void EnableCollectMoreEmojis()
+    {
+        DOTween.KillAll(false);
+        collectMoreEmojis.transform.localScale = Vector3.one;
+        collectMoreEmojis.SetActive(true);
+        collectMoreEmojis.transform.DOScale(1.2f, 0.3f).SetLoops(2, LoopType.Yoyo).OnComplete(() =>
+        {
+            collectMoreEmojis.SetActive(false);
+        });
+        //yield return new WaitForSeconds(collectMoreTimer);
+    }
+
+    //IEnumerator CollectMoreEmojis()
+    //{
+    //    
+
+    //}
 }

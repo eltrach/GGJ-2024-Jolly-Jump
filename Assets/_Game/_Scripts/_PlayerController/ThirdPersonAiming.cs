@@ -91,15 +91,24 @@ public class ThirdPersonAiming : MonoBehaviour
 
         if (_isAiming)
         {
-            print(" --> AIMING");
+            //print(" --> AIMING");
             RotateThePlayerToCameraRot();
             SwitchCamera();
             ChangeAimWeight(1);
             DrawProjectionLine();
-            if (_isShot && availableShots > 0)
+            if (_isShot)
             {
-                StartCoroutine(Shot());
+                if (availableShots > 0)
+                {
+                    StartCoroutine(Shot());
+                }
+                else
+                {
+                    // non enough bullets
+                    GlobalRoot.UIManager.EnableCollectMoreEmojis();
+                }
             }
+
         }
         else
         {
