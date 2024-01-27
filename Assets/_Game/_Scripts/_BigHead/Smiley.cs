@@ -9,7 +9,9 @@ public class Smiley : MonoBehaviour
     [SerializeField] GameObject _fxHideObj;
     [SerializeField] GameObject _fxCollectObj;
 
-    public bool canCollect {  get; private set; }
+    bool _canCollect = true;
+
+    public bool canCollect => _canCollect;
 
     int _indexImoji;
 
@@ -21,7 +23,7 @@ public class Smiley : MonoBehaviour
         _indexImoji = Random.Range(0, _emojisType.Length);
         _emojisType[_indexImoji].SetActive(true);
 
-        canCollect = true;
+        _canCollect = true;
 
         _rootObj.SetActive(true);
         _fxHideObj.SetActive(false);
@@ -45,7 +47,7 @@ public class Smiley : MonoBehaviour
             _rootObj.SetActive(false);
             _fxCollectObj.SetActive(true);
 
-            canCollect = false;
+            _canCollect = false;
         }
     }
 
@@ -55,7 +57,7 @@ public class Smiley : MonoBehaviour
         {
             _rootObj.SetActive(false);
             _fxHideObj.SetActive(true);
-            canCollect = false;
+            _canCollect = false;
 
             Destroy(gameObject, 1.22f);
         }
