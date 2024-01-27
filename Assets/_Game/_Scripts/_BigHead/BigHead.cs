@@ -25,9 +25,16 @@ public class BigHead : MonoBehaviour
 
     private void Update()
     {
-        FlowTarget(_head, 0.6f);
-        FlowTarget(_eyes1, 50);
-        FlowTarget(_eyes2, 50);
+        if (_target)
+        {
+            FlowTarget(_head, 0.6f);
+            FlowTarget(_eyes1, 50);
+            FlowTarget(_eyes2, 50);
+        }
+        else
+        {
+            _target = PlayerRoot.ThirdPersonController.transform;
+        }
     }
 
     private void FlowTarget(Transform folower, float speed)
