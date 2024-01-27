@@ -412,17 +412,17 @@ PrefabInstance:
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.42
+      value: 28.1
       objectReference: {fileID: 0}
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.87
+      value: 32.1
       objectReference: {fileID: 0}
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.26
       objectReference: {fileID: 0}
     - target: {fileID: 775525135976635181, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
@@ -464,16 +464,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Head
       objectReference: {fileID: 0}
-    - target: {fileID: 6128654707312489374, guid: 5eb5125b9e45dd34bb44151be4e58828,
-        type: 3}
-      propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5eb5125b9e45dd34bb44151be4e58828, type: 3}
+--- !u!4 &6931186587727892599
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7744878362271238861}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.220898, y: 2.0000007, z: -12.974504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7744878362271238861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6931186587727892599}
+  m_Layer: 0
+  m_Name: Castle_LowPoly(Modular)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -482,3 +508,4 @@ SceneRoots:
   - {fileID: 601575376}
   - {fileID: 1322940325}
   - {fileID: 2835985447271881036}
+  - {fileID: 6931186587727892599}
