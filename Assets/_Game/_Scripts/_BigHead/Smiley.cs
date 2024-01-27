@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Smiley : MonoBehaviour
 {
     [SerializeField] GameObject[] _emojisType;
+    [SerializeField] int value = 1;
 
     int _indexImoji;
 
     private void Start()
     {
-        foreach (var emoji in _emojisType)
+        foreach (GameObject emoji in _emojisType)
             emoji.SetActive(false);
 
         _indexImoji = Random.Range(0, _emojisType.Length);
@@ -27,6 +26,6 @@ public class Smiley : MonoBehaviour
 
     void Collect()
     {
-
+        PlayerRoot.ThirdPersonAiming.IncreaseShots(value);
     }
 }

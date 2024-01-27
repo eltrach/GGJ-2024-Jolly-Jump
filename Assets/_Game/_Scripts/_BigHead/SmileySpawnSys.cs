@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +5,15 @@ public class SmileySpawnSys : MonoBehaviour
 {
     [SerializeField] GameObject _smilyGameObjGenerator;
     [SerializeField] float _smilySpawnTimer = 0.6f;
+    [SerializeField] float _yOffset = 0.6f;
+
+
 
     SmileySpanPoint[] _spawnPosition;
 
     float _spawnTime;
 
-    List<GameObject> _spawnedObjects = new List<GameObject>();
+    List<GameObject> _spawnedObjects = new();
 
     private void Start()
     {
@@ -20,7 +22,7 @@ public class SmileySpawnSys : MonoBehaviour
 
     private void Update()
     {
-        if(_spawnTime < Time.time)
+        if (_spawnTime < Time.time)
         {
             _spawnTime = Time.time + _smilySpawnTimer;
 
@@ -28,15 +30,18 @@ public class SmileySpawnSys : MonoBehaviour
             if (smileySpan.IsFree)
             {
                 Transform targetP = smileySpan.transform;
-                var obj = Instantiate(_smilyGameObjGenerator, targetP.position, transform.rotation, transform);
+                Vector3 spawnPosition = targetP.position;
+                spawnPosition.y += _yOffset;
+
+                GameObject obj = Instantiate(_smilyGameObjGenerator, spawnPosition, transform.rotation, transform);
                 _spawnedObjects.Add(obj);
 
                 smileySpan.smileyObj = obj;
 
-                if(_spawnedObjects.Count > 5)
+                if (_spawnedObjects.Count > 5)
                 {
                     GameObject toDestroy = _spawnedObjects[0];
-                    if(toDestroy)
+                    if (toDestroy)
                         Destroy(toDestroy);
                     _spawnedObjects.RemoveAt(0);
                 }
