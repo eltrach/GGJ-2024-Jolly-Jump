@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6413092558285848992}
   - component: {fileID: 7653737141511783097}
   - component: {fileID: 2545573704822209863}
+  - component: {fileID: 9088824308900331516}
   m_Layer: 9
   m_Name: TREE BRTRI B (1)
   m_TagString: Untagged
@@ -84,6 +85,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &9088824308900331516
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4936178458810507591}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.20109987
+  m_Height: 1.4351785
+  m_Direction: 1
+  m_Center: {x: 0.024253786, y: 0.68595445, z: -0.06470287}
 --- !u!1 &9163212910087734017
 GameObject:
   m_ObjectHideFlags: 0

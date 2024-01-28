@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 7948167662182502540}
   - component: {fileID: 2484995848201926116}
   - component: {fileID: 5920317168091458849}
+  - component: {fileID: 4495180188814048429}
   m_Layer: 9
   m_Name: TREE RLN B (1)
   m_TagString: Untagged
@@ -167,3 +168,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &4495180188814048429
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897430650236295253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.14463085
+  m_Height: 1.157102
+  m_Direction: 1
+  m_Center: {x: 0.034939706, y: 0.5636179, z: 0.030000001}

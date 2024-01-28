@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9195784831641505185}
   - component: {fileID: 1834658271348125665}
   - component: {fileID: 6858616037945539668}
+  - component: {fileID: 7482405867809006886}
   m_Layer: 9
   m_Name: Evergreen C Snowy
   m_TagString: Untagged
@@ -83,3 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &7482405867809006886
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8652983979951696100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6159177
+  m_Height: 3.0016518
+  m_Direction: 1
+  m_Center: {x: -0.020430744, y: 1.5080307, z: 0.057125926}
