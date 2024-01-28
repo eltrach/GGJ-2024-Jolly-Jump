@@ -1,11 +1,12 @@
 ﻿using Sirenix.OdinInspector;
+using System.Collections;
 using UnityEngine;
 
 // main class singleton that responsible for all the managers (AKA MASTER)
 
 public class GlobalRoot : MonoBehaviour
 {
-    private static GlobalRoot _instance;
+    public static GlobalRoot Instance;
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private UIManager uIManager;
@@ -14,24 +15,23 @@ public class GlobalRoot : MonoBehaviour
     [SerializeField] private ShopManager shopManager;
     [SerializeField] private vDataManager dataManager;
 
-    public static GameManager GameManager { get => _instance.gameManager; }
-    public static UIManager UIManager { get => _instance.uIManager; }
-    public static ThirdPersonUI PlayerUI => _instance.playerUI;
-    public static LevelManager LevelManager { get => _instance.levelManager; }
-    public static ShopManager ShopManager { get => _instance.shopManager; }
-    public static vDataManager DataManager { get => _instance.dataManager; }
+    public static GameManager GameManager { get => Instance.gameManager; }
+    public static UIManager UIManager { get => Instance.uIManager; }
+    public static ThirdPersonUI PlayerUI => Instance.playerUI;
+    public static LevelManager LevelManager { get => Instance.levelManager; }
+    public static ShopManager ShopManager { get => Instance.shopManager; }
+    public static vDataManager DataManager { get => Instance.dataManager; }
     public static bool IsLost { get => isLost; set => isLost = value; }
     public static bool IsWon { get => isWon; set => isWon = value; }
 
     static bool isLost = false;
     static bool isWon = false;
-    bool GameStarted = false;
     private void Awake()
     {
         Application.targetFrameRate = 60;
-        if (_instance == null)
-            _instance = this;
-        else if (_instance != this)
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
         {
             Destroy(gameObject);
             return;
@@ -46,25 +46,28 @@ public class GlobalRoot : MonoBehaviour
     {
         Debug.Log("<color=cyan><b> GAME START </b></color>");
     }
-    private void Update()
-    {
-
-    }
 
     private void GameStart()
     {
 
     }
     [Button]
-    public static void GameWin()
+    public void GameWin()
     {
         if (IsWon || IsLost) return;
         Debug.Log("<color=cyan><b> GAME WIN </b></color>");
         IsWon = true;
 
+        StartCoroutine(Win());
+    }
+    IEnumerator Win()
+    {
+        UIManager.LoadWinScreen();
+
+        yield return new WaitForSeconds(5);
+        LevelManager.LoadNextLevel();
 
     }
-
     public static void GameLose()
     {
         if (IsLost) return;

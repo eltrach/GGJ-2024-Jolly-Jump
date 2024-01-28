@@ -1,5 +1,4 @@
 using UnityEngine;
-using static ToonyColorsPro.ShaderGenerator.Enums;
 
 public class Platform : MonoBehaviour
 {
@@ -11,13 +10,12 @@ public class Platform : MonoBehaviour
 
     Vector3 _startPosition;
     Transform _target;
-    
+
 
     private void Awake()
     {
         _startPosition = transform.position;
     }
-
     private void Update()
     {
         Vector3 newPosition = _startPosition + axe * (Mathf.Cos(Time.time * speed / distance) * distance);
@@ -29,23 +27,22 @@ public class Platform : MonoBehaviour
         transform.position = newPosition;
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        print(collision.gameObject);
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    print(collision.gameObject);
 
-    }
+    //}
 
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _target = null;
-        }
-    }
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        _target = null;
+    //    }
+    //}
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        print("player");
         if (hit.gameObject.CompareTag("Player"))
         {
             _target = PlayerRoot.ThirdPersonController.transform;
