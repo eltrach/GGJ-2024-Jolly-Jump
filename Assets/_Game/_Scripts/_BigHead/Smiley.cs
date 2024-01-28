@@ -51,6 +51,8 @@ public class Smiley : MonoBehaviour
             Destroy(gameObject, 1.22f);
 
             _canCollect = false;
+
+            AudioManager.Play("Collect");
         }
     }
 
