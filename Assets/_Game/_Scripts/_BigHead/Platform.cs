@@ -9,8 +9,7 @@ public class Platform : MonoBehaviour
     public float speed = 1.3f;
 
     Vector3 _startPosition;
-    [SerializeField] CharacterController _target;
-
+    internal Vector3 moveDt;
 
     private void Awake()
     {
@@ -18,25 +17,11 @@ public class Platform : MonoBehaviour
         tag = "Platform";
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         Vector3 newPosition = _startPosition + axe * (Mathf.Cos(Time.time * speed / distance) * distance);
-        if (_target)
-        {
-            Vector3 oldP = transform.position;
-            _target.Move(newPosition - oldP);
-        }
+        moveDt = (newPosition - transform.position);
         transform.position = newPosition;
-    }
-
-    public void OnTargetEnter(CharacterController target)
-    {
-        _target = target;
-    }
-
-    public void OnTargetExit(CharacterController target)
-    {
-        _target = null;
     }
 
     private void OnDrawGizmosSelected()

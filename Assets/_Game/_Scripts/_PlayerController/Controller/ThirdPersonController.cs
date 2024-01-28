@@ -152,8 +152,7 @@ namespace VTemplate.Controller
             float speedOffset = 0.1f;
 
             // accelerate or decelerate to target speed
-            if (currentHorizontalSpeed < targetSpeed - speedOffset ||
-                currentHorizontalSpeed > targetSpeed + speedOffset)
+            if (currentHorizontalSpeed < targetSpeed - speedOffset || currentHorizontalSpeed > targetSpeed + speedOffset)
             {
                 // creates curved result rather than a linear one giving a more organic speed change
                 // note T in Lerp is clamped, so we don't need to clamp our speed
@@ -189,10 +188,13 @@ namespace VTemplate.Controller
 
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
-
             // move the player
-            _controller.Move((targetDirection.normalized * (_speed * Time.deltaTime)) + (new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime));
-
+            if (!_platform || _input.Move != Vector2.zero)
+                _controller.Move((targetDirection.normalized * (_speed * Time.deltaTime)) + (new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime));
+            if (_platform)
+            {
+                transform.position += _platform.moveDt;
+            }
             // update animator if using character
             if (_hasAnimator)
             {
@@ -272,8 +274,10 @@ namespace VTemplate.Controller
                     if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDJump, true);
-                        AudioManager.Play("Jump");
                     }
+
+                    AudioManager.Play("Jump");
+                    _platform = null;
                 }
 
                 // jump timeout
@@ -339,6 +343,21 @@ namespace VTemplate.Controller
             {
                 if (AudioManager.instance)
                     AudioManager.instance.PlayFoot(_animationBlend);
+            }
+        }
+
+        Platform _platform;
+
+        private void OnControllerColliderHit(ControllerColliderHit hit)
+        {
+            var collider = hit.collider;
+            if (collider.CompareTag("Platform"))
+            {
+                _platform = collider.GetComponent<Platform>();
+            }
+            else
+            {
+                _platform = null;
             }
         }
 
