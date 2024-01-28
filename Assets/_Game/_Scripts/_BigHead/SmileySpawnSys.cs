@@ -18,58 +18,46 @@ public class SmileySpawnSys : MonoBehaviour
     private void Start()
     {
         _spawnPosition = GetComponentsInChildren<SmileySpanPoint>(true);
-        for (int i = 0; i < _count; i++)
+        int i = 0;
+        while (true)
         {
-            SmileySpanPoint smileySpan = _spawnPosition[Random.Range(0, _spawnPosition.Length)];
-            if (smileySpan.IsFree)
-            {
-                Transform targetP = smileySpan.transform;
-                Vector3 spawnPosition = targetP.position;
-                spawnPosition.y += _yOffset;
-
-                Smiley obj = Instantiate(_smilyGameObjGenerator, spawnPosition, Quaternion.identity, transform);
-                _spawnedObjects.Add(obj);
-
-                smileySpan.smileyObj = obj;
-
-                //if (_spawnedObjects.Count > _count)
-                //{
-                //    Smiley toDestroy = _spawnedObjects[0];
-                //    if (toDestroy && toDestroy.canCollect)
-                //        toDestroy.Hide();
-                //    _spawnedObjects.RemoveAt(0);
-                //}
-            }
+            i++;
+            _Spawn();
+            if (_spawnedObjects.Count >= _count || i > 200)
+                break;
         }
     }
 
     private void Update()
     {
+        if (_spawnTime < Time.time)
+        {
+            _spawnTime = Time.time + _smilySpawnTimer;
+            _Spawn();
+        }
+    }
 
-        //if (_spawnTime < Time.time)
-        //{
-        //    _spawnTime = Time.time + _smilySpawnTimer;
+    void _Spawn()
+    {
+        SmileySpanPoint smileySpan = _spawnPosition[Random.Range(0, _spawnPosition.Length)];
+        if (smileySpan.IsFree)
+        {
+            Transform targetP = smileySpan.transform;
+            Vector3 spawnPosition = targetP.position;
+            spawnPosition.y += _yOffset;
 
-        //    SmileySpanPoint smileySpan = _spawnPosition[Random.Range(0, _spawnPosition.Length)];
-        //    if (smileySpan.IsFree)
-        //    {
-        //        Transform targetP = smileySpan.transform;
-        //        Vector3 spawnPosition = targetP.position;
-        //        spawnPosition.y += _yOffset;
+            Smiley obj = Instantiate(_smilyGameObjGenerator, spawnPosition, Quaternion.identity, transform);
+            _spawnedObjects.Add(obj);
 
-        //        Smiley obj = Instantiate(_smilyGameObjGenerator, spawnPosition, Quaternion.identity, transform);
-        //        _spawnedObjects.Add(obj);
+            smileySpan.smileyObj = obj;
 
-        //        smileySpan.smileyObj = obj;
-
-        //        if (_spawnedObjects.Count > _count)
-        //        {
-        //            Smiley toDestroy = _spawnedObjects[0];
-        //            if (toDestroy && toDestroy.canCollect)
-        //                toDestroy.Hide();
-        //            _spawnedObjects.RemoveAt(0);
-        //        }
-        //    }
-
+            if (_spawnedObjects.Count > _count)
+            {
+                Smiley toDestroy = _spawnedObjects[0];
+                if (toDestroy && toDestroy.canCollect)
+                    toDestroy.Hide();
+                _spawnedObjects.RemoveAt(0);
+            }
+        }
     }
 }
