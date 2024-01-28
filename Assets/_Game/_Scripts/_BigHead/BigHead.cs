@@ -23,7 +23,7 @@ public class BigHead : MonoBehaviour
 
         _hp = _maxHp;
         GetComponentInChildren<Animation>().Play();
-        _hpSlider.value = 1;
+        _hpSlider.value = 0;
 
         _flagRendeer.material.mainTexture = _flagTextures[Random.Range(0, _flagTextures.Length)];
     }
@@ -53,13 +53,20 @@ public class BigHead : MonoBehaviour
     public void Hit(float damage)
     {
         _hp -= damage;
-        float p = (_hp / _maxHp);
-        _skinnedMeshRenderer.SetBlendShapeWeight(0, 100 - p * 100);
-        _hpSlider.DOValue(p, 0.3f);
+        float p = (_maxHp != 0) ? (_hp / _maxHp) : 0;
+        float blendShapeValue = Mathf.Clamp((_hp / _maxHp) * 100, 0, 100);
+
+        DOVirtual.Float(_skinnedMeshRenderer.GetBlendShapeWeight(0), 100f, 0.3f, value =>
+        {
+            _skinnedMeshRenderer.SetBlendShapeWeight(0, value);
+        });
+
+        _hpSlider.DOValue(1 - p, 0.3f);
 
         if (_hp <= 0)
         {
-            GlobalRoot.LevelManager.LoadNextLevel();
+            GlobalRoot.Instance.GameWin();
         }
     }
+
 }

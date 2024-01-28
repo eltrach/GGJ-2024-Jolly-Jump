@@ -90,7 +90,6 @@ public class ThirdPersonAiming : MonoBehaviour
 
         if (_isAiming)
         {
-            //print(" --> AIMING");
             RotateThePlayerToCameraRot();
             SwitchCamera();
             ChangeAimWeight(1);
@@ -124,30 +123,18 @@ public class ThirdPersonAiming : MonoBehaviour
         lineRenderer.positionCount = Mathf.CeilToInt(linePoints / timeBetweenPoints) + 1;
         Vector3 startPosition = releasePosition.position;
         Vector3 startVelocity = throwStrenght * mainCamera.transform.forward / throwable.mass;
-        lineRenderer.SetPosition(0, startPosition);
-
         int i = 0;
+        lineRenderer.SetPosition(i, startPosition);
         for (float time = 0; time < linePoints; time += timeBetweenPoints)
         {
             Vector3 point = startPosition + time * startVelocity;
-            if (i != 0)
-                point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
+            //if (i != 0)
+            point.y = startPosition.y + startVelocity.y * time + (Physics.gravity.y / 2f * time * time);
             lineRenderer.SetPosition(i, point);
             i++;
-
-            Vector3 lastPosition = lineRenderer.GetPosition(i - 1);
-            if (Physics.Raycast(lastPosition, (point - lastPosition).normalized, out RaycastHit hit,
-                 (point - lastPosition).magnitude,
-                 throwableCollisionMask))
-            {
-                print("reached;");
-                lineRenderer.SetPosition(i, hit.point);
-                lineRenderer.positionCount = i + 1;
-                return;
-            }
         }
-        lineRenderer.SetPosition(lineRenderer.positionCount - 1, Vector3.zero);
-
+        Debug.Log("lineRenderer.positionCount : " + lineRenderer.positionCount);
+        if (lineRenderer.positionCount > 2) lineRenderer.SetPosition(lineRenderer.positionCount - 1, lineRenderer.GetPosition(lineRenderer.positionCount - 2));
     }
     private void ReleaseThrowable()
     {

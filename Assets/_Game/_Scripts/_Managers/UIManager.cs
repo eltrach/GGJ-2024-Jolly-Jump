@@ -7,6 +7,9 @@ public class UIManager : Singleton<UIManager>
 
     public DisplayTextUI laughterEmojiText;
 
+    public GameObject WinScreen;
+    public NextLevelTimer nextLevelTimer;
+
     public GameObject collectMoreEmojis;
     public float collectMoreTimer = 2f;
     public void UpdateLaughterEmoji(int amount)
@@ -25,9 +28,9 @@ public class UIManager : Singleton<UIManager>
         //yield return new WaitForSeconds(collectMoreTimer);
     }
 
-    //IEnumerator CollectMoreEmojis()
-    //{
-    //    
-
-    //}
+    public void LoadWinScreen()
+    {
+        WinScreen.SetActive(true);
+        nextLevelTimer.Init();
+    }
 }

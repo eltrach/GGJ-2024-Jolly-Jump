@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,17 +8,17 @@ public class LevelManager : Singleton<LevelManager>
 {
     int currentLevel = 0;
 
-    [SerializeField]
+
+    [ShowInInspector]
     public int CurrentLevel
     {
         get
         {
-            int value = PlayerPrefs.GetInt("currentLevel", 0);
-            return value;
+            return PlayerPrefs.GetInt("currentLevel", 0);
         }
         set
         {
-            PlayerPrefs.GetInt("currentLevel", value);
+            PlayerPrefs.SetInt("currentLevel", value);
             PlayerPrefs.Save();
             currentLevel = value;
         }
