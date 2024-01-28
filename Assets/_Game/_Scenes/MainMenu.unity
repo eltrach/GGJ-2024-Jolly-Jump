@@ -190,8 +190,26 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: Laff1
+  - name: Laff2
     clip: {fileID: 8300000, guid: ccd70fbeafb1cce449ccb1ec9fcd20f1, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Put
+    clip: {fileID: 8300000, guid: 1dd2af6a1c5e0244cb598599bbbba57e, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 06321ef92785ad245b0b1292547d3a45, type: 3}
     volume: 1
     volumeVariance: 0.1
     pitch: 1

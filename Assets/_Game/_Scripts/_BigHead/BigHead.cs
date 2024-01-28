@@ -52,22 +52,26 @@ public class BigHead : MonoBehaviour
 
     public void Hit(float damage)
     {
-        _hp -= damage;
-        if (_maxHp == 0)
-            _maxHp = 500;
-        float p = 1 - _hp / _maxHp;
-        float blendShapeValue = Mathf.Clamp(p * 100, 0, 100);
-
-        DOVirtual.Float(_skinnedMeshRenderer.GetBlendShapeWeight(0), blendShapeValue, 0.3f, value =>
+        if(_hp > 0)
         {
-            _skinnedMeshRenderer.SetBlendShapeWeight(0, value);
-        });
+            _hp -= damage;
+            if (_maxHp == 0)
+                _maxHp = 500;
+            float p = 1 - _hp / _maxHp;
+            float blendShapeValue = Mathf.Clamp(p * 100, 0, 100);
 
-        _hpSlider.DOValue(p, 0.3f);
+            DOVirtual.Float(_skinnedMeshRenderer.GetBlendShapeWeight(0), blendShapeValue, 0.3f, value =>
+            {
+                _skinnedMeshRenderer.SetBlendShapeWeight(0, value);
+            });
 
-        if (_hp <= 0)
-        {
-            GlobalRoot.Instance.GameWin();
+            _hpSlider.DOValue(p, 0.3f);
+
+            if (_hp <= 0)
+            {
+                GlobalRoot.Instance.GameWin();
+                AudioManager.Play("Win");
+            }
         }
     }
 

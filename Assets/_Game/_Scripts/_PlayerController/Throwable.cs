@@ -13,6 +13,8 @@ public class Throwable : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (damage == 0)
+            return;
         if (collision.transform.CompareTag("BigHead"))
         {
             BigHead bigHead = collision.transform.GetComponentInParent<BigHead>();
@@ -22,8 +24,13 @@ public class Throwable : MonoBehaviour
                 Instantiate(collideParticlePrefab,
                     collision.contacts[0].point,
                     Quaternion.identity);
-        }
-        else fadeOut.FadeOutStart();
 
+            damage = 0;
+            Destroy(gameObject);
+        }
+        else 
+            fadeOut.FadeOutStart();
+
+        AudioManager.Play("Put");
     }
 }

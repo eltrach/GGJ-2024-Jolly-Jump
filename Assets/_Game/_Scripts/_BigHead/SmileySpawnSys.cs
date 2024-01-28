@@ -31,7 +31,7 @@ public class SmileySpawnSys : MonoBehaviour
                 Vector3 spawnPosition = targetP.position;
                 spawnPosition.y += _yOffset;
 
-                Smiley obj = Instantiate(_smilyGameObjGenerator, spawnPosition, transform.rotation, transform);
+                Smiley obj = Instantiate(_smilyGameObjGenerator, spawnPosition, Quaternion.identity, transform);
                 _spawnedObjects.Add(obj);
 
                 smileySpan.smileyObj = obj;
