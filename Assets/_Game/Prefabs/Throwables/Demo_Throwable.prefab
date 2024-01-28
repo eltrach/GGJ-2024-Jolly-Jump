@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6659492332116332419}
   - component: {fileID: 1555072608699021617}
   - component: {fileID: 6262280391814481455}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Demo_Throwable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 6901431851483907224}
   - component: {fileID: 1734889672548662766}
   - component: {fileID: 5301701229791352707}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: Throwable Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 6412697915009787034}
   - component: {fileID: 5828433402894547017}
   - component: {fileID: 4528979652932736349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder.114
   m_TagString: Untagged
   m_Icon: {fileID: 0}

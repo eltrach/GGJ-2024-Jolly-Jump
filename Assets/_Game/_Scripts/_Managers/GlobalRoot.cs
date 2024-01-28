@@ -21,11 +21,8 @@ public class GlobalRoot : MonoBehaviour
     public static LevelManager LevelManager { get => Instance.levelManager; }
     public static ShopManager ShopManager { get => Instance.shopManager; }
     public static vDataManager DataManager { get => Instance.dataManager; }
-    public static bool IsLost { get => isLost; set => isLost = value; }
-    public static bool IsWon { get => isWon; set => isWon = value; }
 
-    static bool isLost = false;
-    static bool isWon = false;
+    static bool win = false;
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -54,42 +51,32 @@ public class GlobalRoot : MonoBehaviour
     [Button]
     public void GameWin()
     {
-        if (IsWon || IsLost) return;
+        if (win) return;
         Debug.Log("<color=cyan><b> GAME WIN </b></color>");
-        IsWon = true;
-
         StartCoroutine(Win());
     }
     IEnumerator Win()
     {
+        win = true;
         UIManager.LoadWinScreen();
 
         yield return new WaitForSeconds(5);
         LevelManager.LoadNextLevel();
 
     }
-    public static void GameLose()
+    public void ReloadLevel()
     {
-        if (IsLost) return;
-        Debug.Log("<color=cyan><b> GAME LOSE </b></color>");
-        IsLost = true;
+        if (!win)
+        {
+            Debug.Log("<color=cyan><b> RELOAD LEVEL </b></color>");
+            StartCoroutine(Reload());
+        }
     }
-    // Level Manager
-    public static void NextLevel()
+    IEnumerator Reload()
     {
-        Debug.Log("<color=cyan><b> NEXT LEVEL </b></color>");
-        Reset();
-
-    }
-    public static void ReloadLevel()
-    {
-        Debug.Log("<color=cyan><b> RELOAD LEVEL </b></color>");
-        Reset();
-
-    }
-    private static void Reset()
-    {
-        IsWon = false;
-        IsLost = false;
+        UIManager.LoadLoseScreen();
+        yield return new WaitForSeconds(5);
+        LevelManager.Reload();
+        win = false;
     }
 }

@@ -7,11 +7,21 @@ public class UIManager : Singleton<UIManager>
 
     public DisplayTextUI laughterEmojiText;
 
-    public GameObject WinScreen;
+    public GameObject winScreen;
     public NextLevelTimer nextLevelTimer;
+
+    public GameObject loseScreen;
+    public LoseTimer loseTimer;
+
 
     public GameObject collectMoreEmojis;
     public float collectMoreTimer = 2f;
+
+    private void Start()
+    {
+        winScreen.SetActive(false);
+        loseScreen.SetActive(false);
+    }
     public void UpdateLaughterEmoji(int amount)
     {
         laughterEmojiText.SetText(amount.ToString());
@@ -30,7 +40,12 @@ public class UIManager : Singleton<UIManager>
 
     public void LoadWinScreen()
     {
-        WinScreen.SetActive(true);
+        winScreen.SetActive(true);
         nextLevelTimer.Init();
+    }
+    public void LoadLoseScreen()
+    {
+        loseScreen.SetActive(true);
+        loseTimer.Init();
     }
 }
