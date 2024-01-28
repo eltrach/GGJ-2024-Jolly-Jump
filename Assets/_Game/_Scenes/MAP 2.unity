@@ -2681,6 +2681,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1553067761974288143, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: _maxHp
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2692993959107662887, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_AnchorMax.x
