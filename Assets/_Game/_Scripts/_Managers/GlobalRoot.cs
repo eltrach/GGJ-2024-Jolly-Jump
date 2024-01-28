@@ -51,7 +51,6 @@ public class GlobalRoot : MonoBehaviour
     [Button]
     public void GameWin()
     {
-        if (win) return;
         Debug.Log("<color=cyan><b> GAME WIN </b></color>");
         StartCoroutine(Win());
     }
@@ -59,7 +58,6 @@ public class GlobalRoot : MonoBehaviour
     {
         win = true;
         UIManager.LoadWinScreen();
-
         yield return new WaitForSeconds(5);
         LevelManager.LoadNextLevel();
 

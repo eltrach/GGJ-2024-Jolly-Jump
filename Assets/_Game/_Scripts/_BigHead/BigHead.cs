@@ -67,7 +67,7 @@ public class BigHead : MonoBehaviour
 
         if (_hp <= 0)
         {
-            GlobalRoot.Instance.GameWin();
+            if (GlobalRoot.Instance) GlobalRoot.Instance.GameWin();
         }
     }
 

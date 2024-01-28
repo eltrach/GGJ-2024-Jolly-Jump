@@ -41,7 +41,7 @@ public class UIManager : Singleton<UIManager>
     public void LoadWinScreen()
     {
         winScreen.SetActive(true);
-        nextLevelTimer.Init();
+        if (winScreen.activeInHierarchy) nextLevelTimer.Init();
     }
     public void LoadLoseScreen()
     {

@@ -1,5 +1,4 @@
 using UnityEngine;
-using static ToonyColorsPro.ShaderGenerator.Enums;
 
 public class Platform : MonoBehaviour
 {
@@ -8,10 +7,10 @@ public class Platform : MonoBehaviour
     public float distance = 1.5f;
     [Range(0.3f, 15f)]
     public float speed = 1.3f;
-    
+
     Vector3 _startPosition;
     [SerializeField] CharacterController _target;
-    
+
 
     private void Awake()
     {
