@@ -12,6 +12,7 @@ public class DeathZone : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GlobalRoot.Instance.ReloadLevel();
+            AudioManager.Play("Laff" + Random.Range(1, 3));
         }
     }
 
