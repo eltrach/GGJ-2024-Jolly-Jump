@@ -172,7 +172,80 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 15bffda7030de0e48b21896907922d32, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Laff1
+    clip: {fileID: 8300000, guid: 41928dba11e32574cbc2f7f7d05e8b17, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Laff1
+    clip: {fileID: 8300000, guid: ccd70fbeafb1cce449ccb1ec9fcd20f1, type: 3}
+    volume: 1
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
   soundEnabled: 1
+  footSounds:
+  - name: font1
+    clip: {fileID: 8300000, guid: cca7179ed0703af46910b8ca2bd49d3d, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: font2
+    clip: {fileID: 8300000, guid: afb0577a0d3e06946b8b972fdf097a46, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: font3
+    clip: {fileID: 8300000, guid: 7ec8d90c0c82ed741afadfd9d6acbfb2, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: font4
+    clip: {fileID: 8300000, guid: 9e95597bbec69a14582f729efd5bb993, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: font5
+    clip: {fileID: 8300000, guid: 359163d498b6d9f4b8f6f50b951cd2de, type: 3}
+    volume: 0.75
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0.1
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &3910530
 Transform:
   m_ObjectHideFlags: 0
