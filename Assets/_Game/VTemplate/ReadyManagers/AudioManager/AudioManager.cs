@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class AudioManager : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class AudioManager : MonoBehaviour
 
 	public bool soundEnabled = true;
 
-	private void Start()
+    public Sound[] footSounds;
+
+    private void Start()
 	{
 		Play("Background");
 	}
@@ -35,22 +38,28 @@ public class AudioManager : MonoBehaviour
 
 		void LoadSound()
 		{
-			foreach (Sound s in sounds)
-			{
-				if (!listSound.ContainsKey(s.name))
-				{
-					s.source = instance.gameObject.AddComponent<AudioSource>();
-					s.source.clip = s.clip;
-					s.source.loop = s.loop;
-					s.source.volume = s.volume;
-					s.source.pitch = s.pitch;
+            foreach (Sound s in footSounds)
+                AddSound(s);
 
-					s.source.outputAudioMixerGroup = mixerGroup;
+            foreach (Sound s in sounds)
+				AddSound(s);
+			
+            void AddSound(Sound s)
+            {
+                if (!listSound.ContainsKey(s.name))
+                {
+                    s.source = instance.gameObject.AddComponent<AudioSource>();
+                    s.source.clip = s.clip;
+                    s.source.loop = s.loop;
+                    s.source.volume = s.volume;
+                    s.source.pitch = s.pitch;
 
-					listSound.Add(s.name, s);
-				}
-			}
-		}
+                    s.source.outputAudioMixerGroup = mixerGroup;
+
+                    listSound.Add(s.name, s);
+                }
+            }
+        }
 	}
 
 	public void Play(string sound)
@@ -102,4 +111,17 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+    internal void PlayFoot(float volume)
+    {
+        Sound[] footsound = instance.footSounds;
+        Sound sound = footsound[Random.Range(0, footsound.Length)];
+        int i = 10;
+        while (sound.source.isPlaying && i-- > 0)
+            sound = footsound[Random.Range(0, footsound.Length)];
+        if (i > 0)
+        {
+            sound.source.volume = volume;
+            sound.source.Play();
+        }
+    }
 }
