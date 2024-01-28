@@ -4436,7 +4436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownText: {fileID: 4884676681085809184}
-  countdownDuration: 5
+  countdownDuration: 2
 --- !u!1 &8682230624604371382
 GameObject:
   m_ObjectHideFlags: 0

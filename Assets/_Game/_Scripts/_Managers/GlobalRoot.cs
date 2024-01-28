@@ -73,7 +73,7 @@ public class GlobalRoot : MonoBehaviour
     IEnumerator Reload()
     {
         UIManager.LoadLoseScreen();
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         LevelManager.Reload();
         win = false;
     }

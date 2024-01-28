@@ -1948,6 +1948,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1553067761974288143, guid: 5eb5125b9e45dd34bb44151be4e58828,
+        type: 3}
+      propertyPath: _maxHp
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 2692993959107662887, guid: 5eb5125b9e45dd34bb44151be4e58828,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2471,6 +2476,7 @@ MonoBehaviour:
     type: 3}
   _smilySpawnTimer: 5
   _yOffset: 0.6
+  _count: 10
 --- !u!1001 &852952773
 PrefabInstance:
   m_ObjectHideFlags: 0

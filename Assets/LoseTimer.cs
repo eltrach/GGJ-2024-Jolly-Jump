@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoseTimer : MonoBehaviour
 {
     public TextMeshProUGUI countdownText;
-    public float countdownDuration = 5f;
+    public float countdownDuration = 2;
     public void Init()
     {
         StartCoroutine(StartCountdown());
