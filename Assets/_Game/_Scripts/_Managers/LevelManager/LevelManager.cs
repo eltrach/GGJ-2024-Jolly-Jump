@@ -27,6 +27,10 @@ public class LevelManager : Singleton<LevelManager>
     public void LoadNextLevel()
     {
         CurrentLevel++;
-        SceneManager.LoadScene(CurrentLevel);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void Reload()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
