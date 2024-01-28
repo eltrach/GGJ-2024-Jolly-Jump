@@ -5,6 +5,12 @@ public class Throwable : MonoBehaviour
     public ParticleSystem collideParticlePrefab;
     public float damage;
 
+    public FadeOut fadeOut;
+
+    private void Start()
+    {
+        fadeOut = GetComponent<FadeOut>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("BigHead"))
@@ -17,6 +23,7 @@ public class Throwable : MonoBehaviour
                     collision.contacts[0].point,
                     Quaternion.identity);
         }
-        else Destroy(gameObject);
+        else fadeOut.FadeOutStart();
+
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing.Drawing2D;
 using UnityEngine;
 
 namespace VTemplate.Controller
@@ -338,7 +337,7 @@ namespace VTemplate.Controller
             float weight = animationEvent.animatorClipInfo.weight;
             if (weight > 0.25f)
             {
-                if(AudioManager.instance)
+                if (AudioManager.instance)
                     AudioManager.instance.PlayFoot(_animationBlend);
             }
         }

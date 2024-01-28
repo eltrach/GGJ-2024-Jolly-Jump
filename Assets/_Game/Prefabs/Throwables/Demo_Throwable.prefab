@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6659492332116332419}
   - component: {fileID: 1555072608699021617}
   - component: {fileID: 6262280391814481455}
+  - component: {fileID: 4687896594827854968}
   m_Layer: 10
   m_Name: Demo_Throwable
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   collideParticlePrefab: {fileID: 6424128469310850354, guid: 1c77318878d4dc44fb56a6b860c28438,
     type: 3}
   damage: 30
+  fadeOut: {fileID: 0}
 --- !u!54 &1555072608699021617
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -99,6 +101,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.087751344
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4687896594827854968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952214931899884660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef6ceb5445bd60149a67c999ee9010b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshRenderer:
+  - {fileID: 4528979652932736349}
+  fadeDuration: 3
+  scaleDuration: 2
 --- !u!1 &2018504085083012319
 GameObject:
   m_ObjectHideFlags: 0
