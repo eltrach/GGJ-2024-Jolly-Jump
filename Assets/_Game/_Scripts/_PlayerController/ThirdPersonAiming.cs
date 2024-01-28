@@ -7,7 +7,7 @@ using UnityEngine.Animations.Rigging;
 public class ThirdPersonAiming : MonoBehaviour
 {
     [SerializeField] private Rig aimLayer;
-    [SerializeField] private Rig shotLayer;
+    [SerializeField] private Rig aimLayer2;
 
 
 
@@ -177,6 +177,8 @@ public class ThirdPersonAiming : MonoBehaviour
     public void ChangeAimWeight(float targetWeight)
     {
         _animator.SetLayerWeight(aimLayerAnimator, targetWeight);
-        aimLayer.weight = Mathf.Lerp(aimLayer.weight, targetWeight, lerpSpeed * Time.deltaTime);
+        float weight = Mathf.Lerp(aimLayer.weight, targetWeight, lerpSpeed * Time.deltaTime);
+        aimLayer.weight = weight;
+        aimLayer2.weight = weight*0.7f;
     }
 }
