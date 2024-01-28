@@ -101,6 +101,9 @@ public class AudioManager : MonoBehaviour
 
 	public static void Play(string value, float pitch = 1)
 	{
+		if (!instance)
+			return;
+
 		if (listSound.ContainsKey(value))
 		{
 			Play(listSound[value], pitch);
