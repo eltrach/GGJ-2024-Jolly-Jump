@@ -14,6 +14,7 @@ public class ThirdPersonAiming : MonoBehaviour
     [Title("throwable")]
     public Rigidbody throwable;
     public Transform releasePosition;
+    public Transform drowPosition;
     //public Transform releasePosition;
 
     public int availableShots = 30;
@@ -121,7 +122,7 @@ public class ThirdPersonAiming : MonoBehaviour
     {
         lineRenderer.enabled = true;
         lineRenderer.positionCount = Mathf.CeilToInt(linePoints / timeBetweenPoints) + 1;
-        Vector3 startPosition = releasePosition.position;
+        Vector3 startPosition = drowPosition.position;
         Vector3 startVelocity = throwStrenght * mainCamera.transform.forward / throwable.mass;
         int i = 0;
         lineRenderer.SetPosition(i, startPosition);
@@ -152,10 +153,11 @@ public class ThirdPersonAiming : MonoBehaviour
         print("---> SHOOT");
 
         _animator.SetTrigger(shotLayerAnimator);
-        ReleaseThrowable();
         availableShots--;
         GlobalRoot.UIManager.UpdateLaughterEmoji(availableShots);
-        yield return new WaitForSeconds(aimToShotDuration);
+        yield return new WaitForSeconds(0.13f);
+        ReleaseThrowable();
+        yield return new WaitForSeconds(aimToShotDuration- 0.13f);
         _animator.ResetTrigger(shotLayerAnimator);
         ChangeAimWeight(0f);
         lineRenderer.enabled = false;
